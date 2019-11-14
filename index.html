@@ -5,45 +5,243 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- Font Awesome CDN -->
+    <script src="https://kit.fontawesome.com/1ba9749ca7.js" crossorigin="anonymous"></script>
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 
-    <title>Hello, world!</title>
+    <title>ZAAB Beerculator</title>
   </head>
   <body>
-    <form>
-        <div class="form-group">
-            <label for="exampleFormControlInput1">Email address</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+
+    <details>
+        <summary>Copyright 2019.</summary>
+        <p> - by ZAAB Inc. All Rights Reserved.</p>
+        <p>All content and graphics on this web site are the property of ZAAB and all Zombies.</p>
+        <p>We will not store any personal data nor sell this to any fellow Zombie</p>
+    </details>
+
+    <template id="malt-template">
+        <div class ="container" id="malt-container">
+            <div class="input-container">
+                <i class="fas fa-minus-circle remove-button" onclick="removeMalt()"></i>
+                <div class="container-header">
+                    Enter Malt Information
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-sm">
+                        <div class="col-sm">
+                            <label for="maltType">hops type</label>
+                            <select class="form-control" id="maltType">
+                                <option>Primary Malt</option>
+                                <option>Seconday Malt</option>
+                                <option>Special Malt</option>
+                            </select>
+                        </div>
+                        <div class="col-sm">
+                            <label for="maltName">hops Name</label>
+                            <input type="text" class="form-control" id="maltName" placeholder="Malt Name">
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <div class="col-sm">
+                            <label for="lovibond">Lovibond</label>
+                            <input type="text" class="form-control" id="lovibond" placeholder="Lovibond">
+                        </div>
+                        <div class="col-sm">
+                            <label for="amountProcent">Amount [%]</label>
+                            <input type="text" class="form-control" id="amountProcent" placeholder="Amount [%]">
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <div class="col-sm">
+                            <label for="fgp">FGP</label>
+                            <input type="text" class="form-control" id="fgp" placeholder="FGP">
+                        </div>
+                        <div class="col-sm">
+                            <label for="amountWeight">Amount [kg]</label>
+                            <input type="text" class="form-control" id="amountWeight" placeholder="Amount [kg]">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="exampleFormControlSelect1">Example select</label>
-            <select class="form-control" id="exampleFormControlSelect1">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-            </select>
+    </template>
+
+    <template id="hops-template">
+        <div class="container" id="hops-container">
+            <div class="input-container">
+                <i class="fas fa-minus-circle remove-button" onclick="removeHops()"></i>
+                <div class="container-header">
+                    Enter Hops Information
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-sm">
+                        <div class="col-sm">
+                            <label for="hopsType">Hops type</label>
+                            <select class="form-control" id="hopsType">
+                                <option>Primary hops</option>
+                                <option>Seconday hops</option>
+                                <option>Dry hops</option>
+                            </select>
+                        </div>
+                        <div class="col-sm">
+                            <label for="hopsType">Hops Name</label>
+                            <input type="text" class="form-control" id="hopsName" placeholder="Hops Name">
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <div class="col-sm">
+                            <label for="aAcid">Alpha Acid</label>
+                            <input type="text" class="form-control" id="aAcid" placeholder="Alpha Acid">
+                        </div>
+                        <div class="col-sm">
+                            <label for="amountProcent">Amount [%]</label>
+                            <input type="text" class="form-control" id="amountProcent" placeholder="Amount [%]">
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <div class="col-sm">
+                            <label for="ibu">Choosen % of target IBU</label>
+                            <input type="text" class="form-control" id="ibu" placeholder="% of target IBU">
+                        </div>
+                        <div class="col-sm">
+                            <label for="amountWeight">Amount [g]</label>
+                            <input type="text" class="form-control" id="amountWeight" placeholder="Amount [g]">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="exampleFormControlSelect2">Example multiple select</label>
-            <select multiple class="form-control" id="exampleFormControlSelect2">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-            </select>
+    </template>
+
+
+    <div id="main-malt-content">
+        <div class="container" id="primMaltContainer">
+            <div class="input-container">
+                <div class="container-header">
+                    Enter Malt Information
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-sm">
+                        <div class="col-sm">
+                            <label for="MaltType">Malt type</label>
+                            <select class="form-control" id="maltType">
+                                <option>Primary Malt</option>
+                                <option>Seconday Malt</option>
+                                <option>Special Malt</option>
+                            </select>
+                        </div>
+                        <div class="col-sm">
+                            <label for="maltType">hops Name</label>
+                            <input type="text" class="form-control" id="maltName" placeholder="Malt Name">
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <div class="col-sm">
+                            <label for="lovibond">Lovibond</label>
+                            <input type="text" class="form-control" id="lovibond" placeholder="Lovibond">
+                        </div>
+                        <div class="col-sm">
+                            <label for="amountProcent">Amount [%]</label>
+                            <input type="text" class="form-control" id="amountProcent" placeholder="Amount [%]">
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <div class="col-sm">
+                            <label for="fgp">FGP</label>
+                            <input type="text" class="form-control" id="fgp" placeholder="FGP">
+                        </div>
+                        <div class="col-sm">
+                            <label for="amountWeight">Amount [kg]</label>
+                            <input type="text" class="form-control" id="amountWeight" placeholder="Amount [kg]">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="exampleFormControlTextarea1">Example textarea</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+
+    <div class="container my-seperator" id="malt-seperator">
+        <div class="row justify-content-md-center">
+            <div class="col">
+                <hr>
+            </div>
+            <div class="col-1 text-center plus-grow" onclick="maltTemplate()">
+                <i class="fas fa-plus-circle"></i>
+            </div>
+            <div class="col">
+                <hr>
+            </div>
         </div>
-    </form>
+    </div>
+
+
+    <div id="main-hops-content">
+        <div class="container" id="primHopsContainer">
+            <div class="input-container">
+                <div class="container-header">
+                    Enter Hops Information
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-sm">
+                        <div class="col-sm">
+                            <label for="hopsType">Hops type</label>
+                            <select class="form-control" id="hopsType">
+                                <option>Primary hops</option>
+                                <option>Seconday hops</option>
+                                <option>Dry hops</option>
+                            </select>
+                        </div>
+                        <div class="col-sm">
+                            <label for="hopsType">Hops Name</label>
+                            <input type="text" class="form-control" id="hopsName" placeholder="Hops Name">
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <div class="col-sm">
+                            <label for="aAcid">Alpha Acid</label>
+                            <input type="text" class="form-control" id="aAcid" placeholder="Alpha Acid">
+                        </div>
+                        <div class="col-sm">
+                            <label for="amountProcent">Amount [%]</label>
+                            <input type="text" class="form-control" id="amountProcent" placeholder="Amount [%]">
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <div class="col-sm">
+                            <label for="ibu">Choosen % of target IBU</label>
+                            <input type="text" class="form-control" id="ibu" placeholder="% of target IBU">
+                        </div>
+                        <div class="col-sm">
+                            <label for="amountWeight">Amount [g]</label>
+                            <input type="text" class="form-control" id="amountWeight" placeholder="Amount [g]">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-seperator" id="hops-seperator">
+        <div class="row justify-content-md-center">
+            <div class="col">
+                <hr>
+            </div>
+            <div class="col-1 text-center plus-grow" onclick="hopsTemplate()">
+                <i class="fas fa-plus-circle"></i>
+            </div>
+            <div class="col">
+                <hr>
+            </div>
+        </div>
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="script.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
