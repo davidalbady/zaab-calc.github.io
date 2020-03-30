@@ -17,7 +17,7 @@
   <body>
 
     <details>
-        <summary>Copyright 2019.</summary>
+            <summary>Copyright 2019.</summary>
         <p> - by ZAAB Inc. All Rights Reserved.</p>
         <p>All content and graphics on this web site are the property of ZAAB and all Zombies.</p>
         <p>We will not store any personal data nor sell this to any fellow Zombie</p>
@@ -117,128 +117,189 @@
         </div>
     </template>
 
-
-    <div id="main-malt-content">
-        <div class="container" id="primMaltContainer">
-            <div class="input-container">
-                <div class="container-header">
-                    Enter Malt Information
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col-sm">
-                        <div class="col-sm">
-                            <label for="MaltType">Malt type</label>
-                            <select class="form-control" id="maltType">
-                                <option>Primary Malt</option>
-                                <option>Seconday Malt</option>
-                                <option>Special Malt</option>
-                            </select>
+    <div class="container-fluid main-window">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="beer-main-info">
+                    <div class="input-group-sm mb-1">
+                        <div class="main-info-header">Beer Main Information</div>
+                        <div class="row main-info-sub">
+                            <div class="col-4">
+                                <label for="beerName">Beer Name</label>
+                            </div>
+                            <div class="col-8">
+                                <input type="text" class="form-control beer-main-info" id="beerName" placeholder="Beer Name">
+                            </div>
                         </div>
-                        <div class="col-sm">
-                            <label for="maltType">hops Name</label>
-                            <input type="text" class="form-control" id="maltName" placeholder="Malt Name">
+                        <div class="row main-info-sub">
+                            <div class="col-4">
+                                <label for="beerStyle">Beer Style</label>
+                            </div>
+                            <div class="col-8">
+                                <input type="text" class="form-control beer-main-info" id="beerStyle" placeholder="Beer Style">
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-sm">
-                        <div class="col-sm">
-                            <label for="lovibond">Lovibond</label>
-                            <input type="text" class="form-control" id="lovibond" placeholder="Lovibond">
+                        <div class="row main-info-sub">
+                            <div class="col-4">
+                                <label for="yeastName">Yeast</label>
+                            </div>
+                            <div class="col-8">
+                                <input type="text" class="form-control beer-main-info" id="yeastName" placeholder="Yeast Name">
+                            </div>
+                        </div>   
+                        <div class="row main-info-sub">
+                            <div class="col-4">
+                                <label for="batchSize">Batch Size</label>
+                            </div>
+                            <div class="col-8">
+                                <input type="text" class="form-control beer-main-info" id="batchSize beer-main-info" placeholder="Batch Size in liters">
+                            </div>
+                        </div>                     
+                        <div class="row">
+                            <div class="col">
+                                <label for="abv">Target ABV</label>
+                                <input type="text" class="form-control beer-main-info" id="abv" placeholder="Target ABV [%]">
+                            </div>
+                            <div class="col">
+                                <label for="brewDate">Brew Date</label>
+                                <input type="date" class="form-control beer-main-info" id="brewDate" placeholder="Brew Date">    
+                            </div>
                         </div>
-                        <div class="col-sm">
-                            <label for="amountProcent">Amount [%]</label>
-                            <input type="text" class="form-control" id="amountProcent" placeholder="Amount [%]">
-                        </div>
-                    </div>
-                    <div class="col-sm">
-                        <div class="col-sm">
-                            <label for="fgp">FGP</label>
-                            <input type="text" class="form-control" id="fgp" placeholder="FGP">
-                        </div>
-                        <div class="col-sm">
-                            <label for="amountWeight">Amount [kg]</label>
-                            <input type="text" class="form-control" id="amountWeight" placeholder="Amount [kg]">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="container my-seperator" id="malt-seperator">
-        <div class="row justify-content-md-center">
-            <div class="col">
-                <hr>
-            </div>
-            <div class="col-1 text-center plus-grow" onclick="maltTemplate()">
-                <i class="fas fa-plus-circle"></i>
-            </div>
-            <div class="col">
-                <hr>
-            </div>
-        </div>
-    </div>
-
-
-    <div id="main-hops-content">
-        <div class="container" id="primHopsContainer">
-            <div class="input-container">
-                <div class="container-header">
-                    Enter Hops Information
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col-sm">
-                        <div class="col-sm">
-                            <label for="hopsType">Hops type</label>
-                            <select class="form-control" id="hopsType">
-                                <option>Primary hops</option>
-                                <option>Seconday hops</option>
-                                <option>Dry hops</option>
-                            </select>
-                        </div>
-                        <div class="col-sm">
-                            <label for="hopsType">Hops Name</label>
-                            <input type="text" class="form-control" id="hopsName" placeholder="Hops Name">
-                        </div>
-                    </div>
-                    <div class="col-sm">
-                        <div class="col-sm">
-                            <label for="aAcid">Alpha Acid</label>
-                            <input type="text" class="form-control" id="aAcid" placeholder="Alpha Acid">
-                        </div>
-                        <div class="col-sm">
-                            <label for="amountProcent">Amount [%]</label>
-                            <input type="text" class="form-control" id="amountProcent" placeholder="Amount [%]">
-                        </div>
-                    </div>
-                    <div class="col-sm">
-                        <div class="col-sm">
-                            <label for="ibu">Choosen % of target IBU</label>
-                            <input type="text" class="form-control" id="ibu" placeholder="% of target IBU">
-                        </div>
-                        <div class="col-sm">
-                            <label for="amountWeight">Amount [g]</label>
-                            <input type="text" class="form-control" id="amountWeight" placeholder="Amount [g]">
-                        </div>
+                      
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <div class="container my-seperator" id="hops-seperator">
-        <div class="row justify-content-md-center">
             <div class="col">
-                <hr>
+                <div id="main-malt-content">
+                    <div class="container" id="primMaltContainer">
+                        <div class="input-container">
+                            <div class="container-header">
+                                Enter Malt Information
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col-sm">
+                                    <div class="col-sm input-group-sm mb-1">
+                                        <label for="MaltType">Malt type</label>
+                                        <select class="form-control" id="maltType">
+                                            <option>Primary Malt</option>
+                                            <option>Seconday Malt</option>
+                                            <option>Special Malt</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm input-group-sm mb-1">
+                                        <label for="maltName">Malt Name</label>
+                                        <select type="text" class="form-control" id="maltName" name="Malt Name" placeholder="Malt Name"></select>
+                                    </div>
+                                </div>
+                                <div class="col-sm">
+                                    <div class="col-sm input-group-sm mb-1">
+                                        <label for="lovibond">Lovibond</label>
+                                        <input type="text" class="form-control" id="lovibond" placeholder="Lovibond">
+                                    </div>
+                                    <div class="col-sm input-group-sm mb-1">
+                                        <label for="amountProcent">Amount [%]</label>
+                                        <input type="text" class="form-control" id="amountProcent" placeholder="Amount [%]">
+                                    </div>
+                                </div>
+                                <div class="col-sm">
+                                    <div class="col-sm input-group-sm mb-1">
+                                        <label for="fgp">FGP</label>
+                                        <input type="text" class="form-control" id="fgp" placeholder="FGP">
+                                    </div>
+                                    <div class="col-sm input-group-sm mb-1">
+                                        <label for="amountWeight">Amount [kg]</label>
+                                        <input type="text" class="form-control" id="amountWeight" placeholder="Amount [kg]">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="container my-seperator" id="malt-seperator">
+                    <div class="row justify-content-md-center">
+                        <div class="col align-self-center">
+                            <hr>
+                        </div>
+                        <div class="col-1 text-center plus-grow" onclick="maltTemplate()">
+                            <i class="fas fa-plus-circle"></i>
+                        </div>
+                        <div class="col align-self-center">
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div id="main-hops-content">
+                    <div class="container" id="primHopsContainer">
+                        <div class="input-container">
+                            <div class="container-header">
+                                Enter Hops Information
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col-sm">
+                                    <div class="col-sm input-group-sm mb-1">
+                                        <label for="hopsType">Hops type</label>
+                                        <select class="form-control" id="hopsType">
+                                            <option>Primary hops</option>
+                                            <option>Seconday hops</option>
+                                            <option>Dry hops</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm input-group-sm mb-1">
+                                        <label for="hopsType">Hops Name</label>
+                                        <input type="text" class="form-control" id="hopsName" placeholder="Hops Name">
+                                    </div>
+                                </div>
+                                <div class="col-sm">
+                                    <div class="col-sm input-group-sm mb-1">
+                                        <label for="aAcid">Alpha Acid</label>
+                                        <input type="text" class="form-control" id="aAcid" placeholder="Alpha Acid">
+                                    </div>
+                                    <div class="col-sm input-group-sm mb-1">
+                                        <label for="amountProcent">Amount [%]</label>
+                                        <input type="text" class="form-control" id="amountProcent" placeholder="Amount [%]">
+                                    </div>
+                                </div>
+                                <div class="col-sm">
+                                    <div class="col-sm input-group-sm mb-1">
+                                        <label for="ibu">Choosen % of target IBU</label>
+                                        <input type="text" class="form-control" id="ibu" placeholder="% of target IBU">
+                                    </div>
+                                    <div class="col-sm input-group-sm mb-1">
+                                        <label for="amountWeight">Amount [g]</label>
+                                        <input type="text" class="form-control" id="amountWeight" placeholder="Amount [g]">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="container my-seperator" id="hops-seperator">
+                    <div class="row justify-content-md-center">
+                        <div class="col align-self-center">
+                            <hr>
+                        </div>
+                        <div class="col-1 text-center plus-grow" onclick="hopsTemplate()">
+                            <i class="fas fa-plus-circle"></i>
+                        </div>
+                        <div class="col align-self-center">
+                            <hr>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-1 text-center plus-grow" onclick="hopsTemplate()">
-                <i class="fas fa-plus-circle"></i>
-            </div>
-            <div class="col">
-                <hr>
+            <div class="col-md-2 bottle-canvas">
+                <canvas>
+                </canvas>
             </div>
         </div>
+  
     </div>
-
+    <!-- <script src="canva.js"></script> -->
+    
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="script.js"></script>

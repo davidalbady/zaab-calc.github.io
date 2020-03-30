@@ -1,0 +1,346 @@
+{
+    "SRM": [
+        {
+            "SRM": "0",
+            "CODE": "ffffff",
+            "COLOR": "White",
+            "ALTERNATE COLOR NAMES": "Bright White, Pure Brilliant White"
+        },
+        {
+            "SRM": "0,5",
+            "CODE": "fbf0cb",
+            "COLOR": "Champagne",
+            "ALTERNATE COLOR NAMES": "Barely Dawn (Kelly-Moore), Grapefruit (Taubmans)"
+        },
+        {
+            "SRM": "1",
+            "CODE": "f7e1a1",
+            "COLOR": "Candleglow",
+            "ALTERNATE COLOR NAMES": "Sandwisp, Butter Up (Sherman Williams)"
+        },
+        {
+            "SRM": "1,5",
+            "CODE": "f4d380",
+            "COLOR": "Broadway Lights",
+            "ALTERNATE COLOR NAMES": "Yellow (Chrysler), Sunbonnet (ICI), Katydid (Taubmans)"
+        },
+        {
+            "SRM": "2",
+            "CODE": "f0c566",
+            "COLOR": "Cream Can",
+            "ALTERNATE COLOR NAMES": "Firefly (Benjamin Moore)"
+        },
+        {
+            "SRM": "2,5",
+            "CODE": "edb950",
+            "COLOR": "Casablanca",
+            "ALTERNATE COLOR NAMES": "Ronchi, Yellow Coneflower (Pittsburgh)"
+        },
+        {
+            "SRM": "3",
+            "CODE": "e9ad3f",
+            "COLOR": "Tulip Tree",
+            "ALTERNATE COLOR NAMES": "Dried Mustard (Cloverdale)"
+        },
+        {
+            "SRM": "3,5",
+            "CODE": "e5a231",
+            "COLOR": "Fire Bush",
+            "ALTERNATE COLOR NAMES": "Ocker (Caparol)"
+        },
+        {
+            "SRM": "4",
+            "CODE": "e19726",
+            "COLOR": "Buttercup",
+            "ALTERNATE COLOR NAMES": "Amberger (Caparol), Pencil Yellow (Devoe)"
+        },
+        {
+            "SRM": "4,5",
+            "CODE": "dd8d1d",
+            "COLOR": "Zest",
+            "ALTERNATE COLOR NAMES": "Dixie, Golden Bark (Dulux), Butterscotch Tempest (Devoe)"
+        },
+        {
+            "SRM": "5",
+            "CODE": "d98416",
+            "COLOR": "Golden Bell",
+            "ALTERNATE COLOR NAMES": "Gamboge, Desert Sunset (GM)"
+        },
+        {
+            "SRM": "5,5",
+            "CODE": "d57b11",
+            "COLOR": "Meteor",
+            "ALTERNATE COLOR NAMES": "Amber 65 (Caparol)"
+        },
+        {
+            "SRM": "6",
+            "CODE": "d1730c",
+            "COLOR": "Dark Goldenrod",
+            "ALTERNATE COLOR NAMES": "Ochre"
+        },
+        {
+            "SRM": "6,5",
+            "CODE": "cd6c08",
+            "COLOR": "Indochine",
+            "ALTERNATE COLOR NAMES": "Red Stage, Sticky Toffee (Plascon)"
+        },
+        {
+            "SRM": "7",
+            "CODE": "c86505",
+            "COLOR": "Alloy Orange",
+            "ALTERNATE COLOR NAMES": "Oxidrot 7s (Caparol)"
+        },
+        {
+            "SRM": "7,5",
+            "CODE": "c45e03",
+            "COLOR": "Tawny",
+            "ALTERNATE COLOR NAMES": "Oxidrot 8s (Caparol)"
+        },
+        {
+            "SRM": "8",
+            "CODE": "c05801",
+            "COLOR": "Rose of Sharon",
+            "ALTERNATE COLOR NAMES": "Burnt Orange (Marston & Langinger)"
+        },
+        {
+            "SRM": "8,5",
+            "CODE": "bc5200",
+            "COLOR": "Ruddy Brown",
+            "ALTERNATE COLOR NAMES": "PMS167 (Pantone), Mahogany"
+        },
+        {
+            "SRM": "9",
+            "CODE": "b74d00",
+            "COLOR": "Mahogany",
+            "ALTERNATE COLOR NAMES": "Rust"
+        },
+        {
+            "SRM": "9,5",
+            "CODE": "b34800",
+            "COLOR": "Fire",
+            "ALTERNATE COLOR NAMES": "Rust"
+        },
+        {
+            "SRM": "10",
+            "CODE": "af4300",
+            "COLOR": "Orange",
+            "ALTERNATE COLOR NAMES": "Terra Warmth (Dutch Boy)"
+        },
+        {
+            "SRM": "10,5",
+            "CODE": "ab3f00",
+            "COLOR": "Dark Orange",
+            "ALTERNATE COLOR NAMES": "India O (Caparol)"
+        },
+        {
+            "SRM": "11",
+            "CODE": "a73b00",
+            "COLOR": "Chinese Red",
+            "ALTERNATE COLOR NAMES": "Rotor Bolus (Caparol)"
+        },
+        {
+            "SRM": "11,5",
+            "CODE": "a33700",
+            "COLOR": "Quora",
+            "ALTERNATE COLOR NAMES": "Rotor Bolus (Caparol)"
+        },
+        {
+            "SRM": "12",
+            "CODE": "9f3400",
+            "COLOR": "Sangria",
+            "ALTERNATE COLOR NAMES": "Rufous"
+        },
+        {
+            "SRM": "12,5",
+            "CODE": "9b3000",
+            "COLOR": "Dark Orange-Red",
+            "ALTERNATE COLOR NAMES": "A7 (Trumatch)"
+        },
+        {
+            "SRM": "13",
+            "CODE": "972d00",
+            "COLOR": "Totem Pole",
+            "ALTERNATE COLOR NAMES": "Oregon, Dark Red, Schwedenro/Schwedenrot (Caparol)"
+        },
+        {
+            "SRM": "14",
+            "CODE": "8f2800",
+            "COLOR": "Peru Tan",
+            "ALTERNATE COLOR NAMES": "Dark Red, Kobe, Rotbraun (Caparol)"
+        },
+        {
+            "SRM": "15",
+            "CODE": "882300",
+            "COLOR": "Red Beech",
+            "ALTERNATE COLOR NAMES": "Sienna, Grand Canyon Brown (GM)"
+        },
+        {
+            "SRM": "16",
+            "CODE": "811f00",
+            "COLOR": "Maroon",
+            "ALTERNATE COLOR NAMES": "Kenyan Copper"
+        },
+        {
+            "SRM": "17",
+            "CODE": "7b1b00",
+            "COLOR": "Pueblo",
+            "ALTERNATE COLOR NAMES": "Oxidrot+Feuerrot 1/1 (Caparol)"
+        },
+        {
+            "SRM": "18",
+            "CODE": "741800",
+            "COLOR": "Cedar Wood",
+            "ALTERNATE COLOR NAMES": "Amber Fire (Chrysler), Kardinal Braun (Caparol)"
+        },
+        {
+            "SRM": "19",
+            "CODE": "6e1500",
+            "COLOR": "Barn Red",
+            "ALTERNATE COLOR NAMES": "Oxidrot Dunkel (Caparol)"
+        },
+        {
+            "SRM": "20",
+            "CODE": "681200",
+            "COLOR": "Rosewood",
+            "ALTERNATE COLOR NAMES": "Oxidrot (Caparol), Red (Ford, Chrysler)"
+        },
+        {
+            "SRM": "21",
+            "CODE": "631000",
+            "COLOR": "Dark Red",
+            "ALTERNATE COLOR NAMES": "Oxidrot (Caparol)"
+        },
+        {
+            "SRM": "22",
+            "CODE": "5e0e00",
+            "COLOR": "Red Oxide",
+            "ALTERNATE COLOR NAMES": "Prune, Persian Plum, Burgundy (Ford)"
+        },
+        {
+            "SRM": "23",
+            "CODE": "590c00",
+            "COLOR": "Rustic Red",
+            "ALTERNATE COLOR NAMES": "Bulgarian Rose, Murano (Caparol), Mohawk Maroon (Ford)"
+        },
+        {
+            "SRM": "24",
+            "CODE": "540b00",
+            "COLOR": "Burnt Maroon",
+            "ALTERNATE COLOR NAMES": "Indian Tan, Grenadin 35 (Caparol), Crimson Red (Chrysler)"
+        },
+        {
+            "SRM": "25",
+            "CODE": "500900",
+            "COLOR": "Pheasant Red",
+            "ALTERNATE COLOR NAMES": "Dark Diamond Bright Red (Ford), Pimento Red (Chrysler)"
+        },
+        {
+            "SRM": "26",
+            "CODE": "4c0800",
+            "COLOR": "Brown Pod",
+            "ALTERNATE COLOR NAMES": "Medium Rosewood (Ford), Cordovan Brown (Chrysler)"
+        },
+        {
+            "SRM": "27",
+            "CODE": "480700",
+            "COLOR": "Temptress",
+            "ALTERNATE COLOR NAMES": "Regis Red (Ford), Dark Beech Firemist (Chrysler)"
+        },
+        {
+            "SRM": "28",
+            "CODE": "440600",
+            "COLOR": "Dark Sienna",
+            "ALTERNATE COLOR NAMES": "Chestnut (Ford)"
+        },
+        {
+            "SRM": "29",
+            "CODE": "410500",
+            "COLOR": "Black Bean",
+            "ALTERNATE COLOR NAMES": "Dark Cordovan (Ford)"
+        },
+        {
+            "SRM": "30",
+            "CODE": "3d0500",
+            "COLOR": "Dark Bronze",
+            "ALTERNATE COLOR NAMES": "Dark Champagne (Ford), Piedmont Maroon (Chrysler)"
+        },
+        {
+            "SRM": "31",
+            "CODE": "3a0400",
+            "COLOR": "Chocolate",
+            "ALTERNATE COLOR NAMES": "Carmine, Seal Brown, Maroon (Ford)"
+        },
+        {
+            "SRM": "32",
+            "CODE": "370400",
+            "COLOR": "Autumn Maple",
+            "ALTERNATE COLOR NAMES": "Imperial Maroon (Chrysler), Sunset Maroon (AMC)"
+        },
+        {
+            "SRM": "33",
+            "CODE": "340300",
+            "COLOR": "Dark Cabernet",
+            "ALTERNATE COLOR NAMES": "Dark Maroon (Ford)"
+        },
+        {
+            "SRM": "34",
+            "CODE": "320300",
+            "COLOR": "Titian Maroon",
+            "ALTERNATE COLOR NAMES": "Victoria Plum (GM)"
+        },
+        {
+            "SRM": "35",
+            "CODE": "2f0200",
+            "COLOR": "Sepia Black",
+            "ALTERNATE COLOR NAMES": "Tyrian Purple, Brown (Ford)"
+        },
+        {
+            "SRM": "36",
+            "CODE": "2d0200",
+            "COLOR": "Dark Gold Wing",
+            "ALTERNATE COLOR NAMES": "Coppertone (Ford)"
+        },
+        {
+            "SRM": "37",
+            "CODE": "2a0200",
+            "COLOR": "Zinnwaldite Brown",
+            "ALTERNATE COLOR NAMES": "Midnight Wine (Ford)"
+        },
+        {
+            "SRM": "38",
+            "CODE": "280100",
+            "COLOR": "Diesel",
+            "ALTERNATE COLOR NAMES": "Maroon Deep (AMC), Amarone (Alcro)"
+        },
+        {
+            "SRM": "39",
+            "CODE": "260100",
+            "COLOR": "Licorice",
+            "ALTERNATE COLOR NAMES": "Dark Vivid Red (AMC)"
+        },
+        {
+            "SRM": "40",
+            "CODE": "240100",
+            "COLOR": "Black",
+            "ALTERNATE COLOR NAMES": "Morocco Red, Oporto Maroon (GM)"
+        },
+        {
+            "SRM": "50",
+            "CODE": "160000",
+            "COLOR": "Smoky Black",
+            "ALTERNATE COLOR NAMES": "Black Magic (Homebase), Velvet Maroon (Ford)"
+        },
+        {
+            "SRM": "65",
+            "CODE": "0d0000",
+            "COLOR": "Coal Black",
+            "ALTERNATE COLOR NAMES": "Black Diamond (GM), Granada Black (GM)"
+        },
+        {
+            "SRM": "80",
+            "CODE": "000000",
+            "COLOR": "Moonlight Black",
+            "ALTERNATE COLOR NAMES": "Ebony, Jet Black (RAL), Panther Black (Ford)"
+        }
+    ]
+}
