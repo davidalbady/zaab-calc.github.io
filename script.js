@@ -1,6 +1,6 @@
 //Test json fetch with
 //http://myjson.com/
-fetch('https://api.myjson.com/bins/wytok')
+fetch('http://89.107.58.115/srm.json')
   .then(response => {
     return response.json()
   })
