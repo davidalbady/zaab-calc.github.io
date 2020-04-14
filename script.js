@@ -1,16 +1,29 @@
 //Test json fetch with
 //http://myjson.com/
-fetch('http://89.107.58.115/srm.json')
-  .then(response => {
-    return response.json()
-  })
-  .then(data => {
-    // Work with JSON data here
-    console.log(data["SRM"][1].COLOR)
-  })
-  .catch(err => {
-    // Do something for an error here
-})
+function getGrainData(grainInput) {
+    fetch('https://api.myjson.com/bins/x261w')
+    .then(response => {
+        return response.json()
+    })
+    .then(data => {
+        for (i=0; i<data.length; i++){
+            if(data[i].Grain = grainInput){
+                data[i].Origin = document.getElementById('lovibond').value;
+            }
+        }
+        // Work with JSON data here
+        console.log(data[i].Grain)
+        console.log(data[i].Color)
+        console.log(data);
+    })
+    .catch(err => {
+        // Do something for an error here
+    })
+}
+
+
+document.getElementById('maltName').addEventListener('change', getGrainData(document.getElementById('maltName').value));
+
 dropDownData();
 //Populate Malt Name from Json 
 function dropDownData(){
@@ -23,7 +36,10 @@ function dropDownData(){
     dropdown.add(defaultOption);
     dropdown.selectedIndex = 0;
 
-    const url = 'https://api.myjson.com/bins/wytok';
+    // test url with grains
+    //https://api.myjson.com/bins/x261w
+    //const url = 'https://api.myjson.com/bins/wytok';
+    const url = 'https://api.myjson.com/bins/x261w';
 
     fetch(url)  
     .then(  
@@ -34,16 +50,15 @@ function dropDownData(){
         }
 
         // Examine the text in the response  
-        response.json().then(function(data) {  
-            console.log(data["SRM"].length);
+        response.json().then(function(data) {
             let option;
         
-            for (let i = 0; i < data["SRM"].length; i++) {
-            option = document.createElement('option');
-            option.text = data["SRM"][i].COLOR;
-            option.value = data["SRM"][i].SRM;
-            dropdown.add(option);
-            }    
+            for (let i = 0; i < data.length; i++) {
+                option = document.createElement('option');
+                option.text = data[i].Grain;
+                option.value = data[i];
+                dropdown.add(option);
+            }  
         });  
         }  
     )  
@@ -161,3 +176,108 @@ function removeHops(){
     var hopsContainer = document.getElementById("hops-container");
     hopsContainer.parentNode.removeChild(hopsContainer);
 }
+
+
+//Import json and generate table
+grains_test = [
+    {
+      "grain": "Pilsner Malt",
+      "origin": "Germany",
+      "type": "Base",
+      "manufacturer": "Avangard",
+      "must-mash?": "Yes",
+      "color-low": 1.5,
+      "color-high": 1.5,
+      "color-low-srm": 1.2719,
+      "color-high-srm": 1.2719,
+      "extract-fg-min": 81,
+      "potential": 1.0374301,
+      "moisture": 4.5,
+      "usage-max": 100
+    },
+    {
+      "grain": "Vienna Malt",
+      "origin": "Germany",
+      "type": "Base",
+      "manufacturer": "Avangard",
+      "must-mash?": "Yes",
+      "color-low": 2.8,
+      "color-high": 2.8,
+      "color-low-srm": 3.03288,
+      "color-high-srm": 3.03288,
+      "extract-fg-min": 82,
+      "potential": 1.0378922,
+      "moisture": 5.5,
+      "usage-max": 90
+    },
+    {
+      "grain": "Heidleberg",
+      "origin": "Germany",
+      "type": "Base",
+      "manufacturer": "BestMalz",
+      "must-mash?": "Yes",
+      "color-low": 1.5,
+      "color-high": 1.5,
+      "color-low-srm": 1.2719,
+      "color-high-srm": 1.2719,
+      "extract-fg-min": 80.5,
+      "potential": 1.03719905,
+      "moisture": 4.9,
+      "usage-max": 100
+    },
+    {
+      "grain": "Melanoidin",
+      "origin": "Germany",
+      "type": "Base",
+      "manufacturer": "BestMalz",
+      "must-mash?": "Yes",
+      "color-low": 23,
+      "color-high": 31,
+      "color-low-srm": 30.3958,
+      "color-high-srm": 41.2326,
+      "extract-fg-min": 75,
+      "potential": 1.0346575,
+      "moisture": 4.9,
+      "usage-max": 50
+    },
+    {
+      "grain": "Melanoidin Light",
+      "origin": "Germany",
+      "type": "Base",
+      "manufacturer": "BestMalz",
+      "must-mash?": "Yes",
+      "color-low": 16,
+      "color-high": 23,
+      "color-low-srm": 20.9136,
+      "color-high-srm": 30.3958,
+      "extract-fg-min": 75,
+      "potential": 1.0346575,
+      "moisture": 4.9,
+      "usage-max": 70
+    },
+    {
+      "grain": "Organic Pilsen Malt",
+      "origin": "Germany",
+      "type": "Base",
+      "manufacturer": "BestMalz",
+      "must-mash?": "Yes",
+      "color-low": 1.6,
+      "color-high": 2.3,
+      "color-low-srm": 1.40736,
+      "color-high-srm": 2.35558,
+      "extract-fg-min": 80.5,
+      "potential": 1.03719905,
+      "moisture": 4.9,
+      "usage-max": 100
+    }
+]
+
+console.log(grains_test.length);
+
+// for (let i=0; i < grains_test.length; i++){
+//     console.log(grains_test[i]);
+// }
+
+// grains_test.forEach(element => {
+//     console.log(element.length);
+//});

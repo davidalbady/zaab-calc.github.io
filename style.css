@@ -19,6 +19,10 @@ details{
     margin-bottom: 10px;;
 }
 
+.overlay-malt {
+    background-color: rgba(0, 0, 0, 0.623);
+}
+
 .main-info-header {
     font-size: 36px;
     padding-bottom: 10px;
