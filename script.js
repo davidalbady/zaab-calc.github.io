@@ -176,9 +176,6 @@ function removeHops(){
     var hopsContainer = document.getElementById("hops-container");
     hopsContainer.parentNode.removeChild(hopsContainer);
 }
-
-
-//Import json and generate table
 grains_test = [
     {
       "grain": "Pilsner Malt",
@@ -272,12 +269,28 @@ grains_test = [
     }
 ]
 
-console.log(grains_test.length);
+setTimeout(function() {
+//Import json and generate table
 
 // for (let i=0; i < grains_test.length; i++){
 //     console.log(grains_test[i]);
 // }
+let createTable = "";
+createTable += "<table>";
 
-// grains_test.forEach(element => {
-//     console.log(element.length);
-//});
+for (x in grains_test) {
+    createTable += "<tr><td>" + grains_test[x].grain + "</tr></td>";
+    console.log(Object.keys(grains_test[x]));
+    //console.log(Object.keys(grains_test));
+    //console.log(Object.values(grains_test));
+};
+
+// for (let [key, value] of Object(grains_test)) {
+//     console.log(`${key}: ${value}`);
+// }
+
+createTable += "</table>";
+console.log(createTable);
+document.getElementById("table-data").innerHTML = createTable;
+console.log("Passed the html input");
+}, 3000);
