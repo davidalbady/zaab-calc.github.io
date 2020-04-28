@@ -1,7 +1,7 @@
 //Test json fetch with
 //http://myjson.com/
 function getGrainData(grainInput) {
-    fetch('https://api.myjson.com/bins/x261w')
+    fetch('https://davidalbady.github.io/zaab-calc.github.io/grains.json')
     .then(response => {
         return response.json()
     })
@@ -39,7 +39,7 @@ function dropDownData(){
     // test url with grains
     //https://api.myjson.com/bins/x261w
     //const url = 'https://api.myjson.com/bins/wytok';
-    const url = 'https://api.myjson.com/bins/x261w';
+    const url = 'https://davidalbady.github.io/zaab-calc.github.io/grains.json';
 
     fetch(url)  
     .then(  
@@ -150,12 +150,12 @@ function getMainInfo() {
 //###################################################################
 // Templates to generate input section for malt, hops in main page //
 //###################################################################
-// function maltTemplate(){
-//     const myMaltTemplate = document.getElementById("malt-template");
-//     const maltNode = document.importNode(myMaltTemplate.content, true);
-//     const mainContent = document.getElementById("main-malt-content");
-//     mainContent.appendChild(maltNode);
-// }
+function maltTemplate(){
+    const myMaltTemplate = document.getElementById("malt-template");
+    const maltNode = document.importNode(myMaltTemplate.content, true);
+    const mainContent = document.getElementById("main-malt-content");
+    mainContent.appendChild(maltNode);
+}
 
 function removeMalt(){
     //var maltMain = document.getElementById("main-malt-content");
@@ -274,82 +274,70 @@ function overlayOff(){
 }
 
 
-
-//setTimeout(
-    function maltTemplate() {
-        document.getElementById("overlay-malt").style.display = "block";
-        // Extract value from table header. 
-        let col = [];
-        for (let i = 0; i < grains_test.length; i++) {
-            for (let key in grains_test[i]) {
-                if (col.indexOf(key) === -1) {
-                    col.push(key);
-                }
+function addMaltData() {
+    document.getElementById("overlay-malt").style.display = "block";
+    // Extract value from table header. 
+    let col = [];
+    for (let i = 0; i < grains_test.length; i++) {
+        for (let key in grains_test[i]) {
+            if (col.indexOf(key) === -1) {
+                col.push(key);
             }
         }
-        
-        // Create a table.
-        const table = document.createElement("table");
-        table.classList.add("table");
-        table.classList.add("table-dark");
-        table.classList.add("table-hover");
-        table.classList.add("table-responsive");
-
-        // Create table header row using the extracted headers above.
-        let tHead = document.createElement("thead");
-        table.appendChild(tHead);
-        let tr = table.insertRow(-1);  // table row.
-        //tHead.append(tr);           
-
-        let grainHeaders = ["Grains", "Origin", "Type", "Manufacturer", "Must Mash", "Color-Low", "Color-High", "Color-Low-SRM", "Color-High-SRM", "Extract-fg-SRM", "Potential", "Moisture", "Usage Max"];
-
-        //Adding headers
-        for (let i = 0; i< grainHeaders.length; i++) {
-            let th = document.createElement("th");      // table header.
-            th.innerHTML = grainHeaders[i];
-            tr.appendChild(th);
-            //console.log(grainHeaders[i]);
-        }
-
-        // add json data to the table as rows.
-        for (let i = 0; i < grains_test.length; i++) {
-
-            tr = table.insertRow(-1);
-
-            for (let j = 0; j < col.length; j++) {
-                let tabCell = tr.insertCell(-1);
-                tabCell.innerHTML = grains_test[i][col[j]];
-            }
-        }
+    }
     
-        // Now, add the newly created table with json data, to a container.
-        const divShowData = document.getElementById('table-data');
-        divShowData.innerHTML = "";
-        divShowData.appendChild(table);
+    // Create a table with right classes
+    const table = document.createElement("table");
+    table.classList.add("table");
+    table.classList.add("table-dark"); 
+    table.classList.add("table-hover");
+    table.classList.add("table-responsive"); //Responsive for smaller screens
 
-        // table.onclick = function(event) {
-        //     let target = event.target; // where was the click?
-        //     const row = event.target.parentNode;
-        //     console.log("Table clicked: " + row);
-        //     //if (target.tagName != 'TD') return; // not on TD? Then we're not interested
-          
-        // //    highlight(target); // highlight it
-        //   };
+    // Create table header row using the extracted headers above.
+    let tHead = document.createElement("thead");
+    table.appendChild(tHead);
+    let tr = table.insertRow(-1);  // table row.          
 
+    //let grainHeaders = ["Grains", "Origin", "Type", "Manufacturer", "Must Mash", "Color-Low", "Color-High", "Color-Low-SRM", "Color-High-SRM", "Extract-fg-SRM", "Potential", "Moisture", "Usage Max"];
+    let grainHeaders = getGrainData();
 
-        var tblRow = document.querySelectorAll("tr");
-        for (var i = 0; i < tblRow.length; i++)
-        (function (e) {
-            tblRow[e].addEventListener("click", function () {
-            console.log({
-                "FirstName": this.querySelectorAll("*")[0].innerHTML.trim(),
-                "LastName": this.querySelectorAll("*")[1].innerHTML.trim(),
-                "Age": this.querySelectorAll("*")[2].innerHTML.trim()
-            });
-            }, false);
-        })(i);
+    //Adding headers
+    for (let i = 0; i< grainHeaders.length; i++) {
+        let th = document.createElement("th");      // table header.
+        th.innerHTML = grainHeaders[i];
+        tHead.appendChild(th);
+    }
+
+    // add json data to the table as rows.
+    for (let i = 0; i < grains_test.length; i++) {
+
+        tr = table.insertRow(-1);
+
+        for (let j = 0; j < col.length; j++) {
+            let tabCell = tr.insertCell(-1);
+            tabCell.innerHTML = grains_test[i][col[j]];
+        }
+    }
+
+    //Adding the newly created table with json data, to a container.
+    const divShowData = document.getElementById('table-data');
+    divShowData.innerHTML = "";
+    divShowData.appendChild(table);
+
+    //Getting selected tbl row values
+    var tblRow = document.querySelectorAll("tr");
+    for (var i = 0; i < tblRow.length; i++)
+    (function (e) {
+        tblRow[e].addEventListener("click", function () {
+        console.log({
+            "Grains": this.querySelectorAll("*")[0].innerHTML.trim(),
+            "Origin": this.querySelectorAll("*")[1].innerHTML.trim(),
+            "Type": this.querySelectorAll("*")[2].innerHTML.trim()
+        });
+        }, false);
+    })(i);
 
 }
-//, 3000);
+
 
 

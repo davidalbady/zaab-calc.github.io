@@ -117,8 +117,8 @@
         </div>
     </template>
 
-    <!-- Table overlay with json data   onclick="overlayOff()"-->
-    <div class="container overlay-malt" id="overlay-malt">  
+    <!-- Table overlay with json data -->
+    <div class="container overlay-malt" id="overlay-malt" onclick="overlayOff()">  
         <p id="table-data"></p>
     </div>
 
@@ -176,7 +176,8 @@
             </div>
             <div class="col">
                 <div id="main-malt-content">
-                    <div class="container" id="primMaltContainer">
+                    <div class="container" id="primMaltContainer" onclick="addMaltData()">
+                        <div class="add-malt-content-symbol" id="add-malt-content-symbol"><i class="far fa-plus-square"></i></div>
                         <div class="input-container">
                             <div class="container-header">
                                 Enter Malt Information
