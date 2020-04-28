@@ -150,12 +150,12 @@ function getMainInfo() {
 //###################################################################
 // Templates to generate input section for malt, hops in main page //
 //###################################################################
-function maltTemplate(){
-    const myMaltTemplate = document.getElementById("malt-template");
-    const maltNode = document.importNode(myMaltTemplate.content, true);
-    const mainContent = document.getElementById("main-malt-content");
-    mainContent.appendChild(maltNode);
-}
+// function maltTemplate(){
+//     const myMaltTemplate = document.getElementById("malt-template");
+//     const maltNode = document.importNode(myMaltTemplate.content, true);
+//     const mainContent = document.getElementById("main-malt-content");
+//     mainContent.appendChild(maltNode);
+// }
 
 function removeMalt(){
     //var maltMain = document.getElementById("main-malt-content");
@@ -269,28 +269,87 @@ grains_test = [
     }
 ]
 
-setTimeout(function() {
-//Import json and generate table
+function overlayOff(){
+    document.getElementById("overlay-malt").style.display = "none";
+}
 
-// for (let i=0; i < grains_test.length; i++){
-//     console.log(grains_test[i]);
-// }
-let createTable = "";
-createTable += "<table>";
 
-for (x in grains_test) {
-    createTable += "<tr><td>" + grains_test[x].grain + "</tr></td>";
-    console.log(Object.keys(grains_test[x]));
-    //console.log(Object.keys(grains_test));
-    //console.log(Object.values(grains_test));
-};
 
-// for (let [key, value] of Object(grains_test)) {
-//     console.log(`${key}: ${value}`);
-// }
+//setTimeout(
+    function maltTemplate() {
+        document.getElementById("overlay-malt").style.display = "block";
+        // Extract value from table header. 
+        let col = [];
+        for (let i = 0; i < grains_test.length; i++) {
+            for (let key in grains_test[i]) {
+                if (col.indexOf(key) === -1) {
+                    col.push(key);
+                }
+            }
+        }
+        
+        // Create a table.
+        const table = document.createElement("table");
+        table.classList.add("table");
+        table.classList.add("table-dark");
+        table.classList.add("table-hover");
+        table.classList.add("table-responsive");
 
-createTable += "</table>";
-console.log(createTable);
-document.getElementById("table-data").innerHTML = createTable;
-console.log("Passed the html input");
-}, 3000);
+        // Create table header row using the extracted headers above.
+        let tHead = document.createElement("thead");
+        table.appendChild(tHead);
+        let tr = table.insertRow(-1);  // table row.
+        //tHead.append(tr);           
+
+        let grainHeaders = ["Grains", "Origin", "Type", "Manufacturer", "Must Mash", "Color-Low", "Color-High", "Color-Low-SRM", "Color-High-SRM", "Extract-fg-SRM", "Potential", "Moisture", "Usage Max"];
+
+        //Adding headers
+        for (let i = 0; i< grainHeaders.length; i++) {
+            let th = document.createElement("th");      // table header.
+            th.innerHTML = grainHeaders[i];
+            tr.appendChild(th);
+            //console.log(grainHeaders[i]);
+        }
+
+        // add json data to the table as rows.
+        for (let i = 0; i < grains_test.length; i++) {
+
+            tr = table.insertRow(-1);
+
+            for (let j = 0; j < col.length; j++) {
+                let tabCell = tr.insertCell(-1);
+                tabCell.innerHTML = grains_test[i][col[j]];
+            }
+        }
+    
+        // Now, add the newly created table with json data, to a container.
+        const divShowData = document.getElementById('table-data');
+        divShowData.innerHTML = "";
+        divShowData.appendChild(table);
+
+        // table.onclick = function(event) {
+        //     let target = event.target; // where was the click?
+        //     const row = event.target.parentNode;
+        //     console.log("Table clicked: " + row);
+        //     //if (target.tagName != 'TD') return; // not on TD? Then we're not interested
+          
+        // //    highlight(target); // highlight it
+        //   };
+
+
+        var tblRow = document.querySelectorAll("tr");
+        for (var i = 0; i < tblRow.length; i++)
+        (function (e) {
+            tblRow[e].addEventListener("click", function () {
+            console.log({
+                "FirstName": this.querySelectorAll("*")[0].innerHTML.trim(),
+                "LastName": this.querySelectorAll("*")[1].innerHTML.trim(),
+                "Age": this.querySelectorAll("*")[2].innerHTML.trim()
+            });
+            }, false);
+        })(i);
+
+}
+//, 3000);
+
+
