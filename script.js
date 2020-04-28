@@ -275,11 +275,12 @@ function overlayOff(){
 
 
 function addMaltData() {
+    let grainsData = getGrainData();
     document.getElementById("overlay-malt").style.display = "block";
     // Extract value from table header. 
     let col = [];
-    for (let i = 0; i < grains_test.length; i++) {
-        for (let key in grains_test[i]) {
+    for (let i = 0; i < grainsData.length; i++) {
+        for (let key in grainsData[i]) {
             if (col.indexOf(key) === -1) {
                 col.push(key);
             }
@@ -309,13 +310,13 @@ function addMaltData() {
     }
 
     // add json data to the table as rows.
-    for (let i = 0; i < grains_test.length; i++) {
+    for (let i = 0; i < grainsData.length; i++) {
 
         tr = table.insertRow(-1);
 
         for (let j = 0; j < col.length; j++) {
             let tabCell = tr.insertCell(-1);
-            tabCell.innerHTML = grains_test[i][col[j]];
+            tabCell.innerHTML = grainsData[i][col[j]];
         }
     }
 
