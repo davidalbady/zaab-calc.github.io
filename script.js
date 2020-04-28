@@ -298,8 +298,8 @@ function addMaltData() {
     table.appendChild(tHead);
     let tr = table.insertRow(-1);  // table row.          
 
-    //let grainHeaders = ["Grains", "Origin", "Type", "Manufacturer", "Must Mash", "Color-Low", "Color-High", "Color-Low-SRM", "Color-High-SRM", "Extract-fg-SRM", "Potential", "Moisture", "Usage Max"];
-    let grainHeaders = getGrainData();
+    let grainHeaders = ["Grains", "Origin", "Type", "Manufacturer", "Must Mash", "Color-Low", "Color-High", "Color-Low-SRM", "Color-High-SRM", "Extract-fg-SRM", "Potential", "Moisture", "Usage Max"];
+    //let grainHeaders = getGrainData();
 
     //Adding headers
     for (let i = 0; i< grainHeaders.length; i++) {
