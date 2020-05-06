@@ -1,3 +1,6 @@
+// import {grains} from "./beerData.js";
+// console.log(grains)
+
 //Test json fetch with
 //http://myjson.com/
 function getGrainData(grainInput) {
@@ -26,7 +29,7 @@ document.getElementById('maltName').addEventListener('change', getGrainData(docu
 
 dropDownData();
 //Populate Malt Name from Json 
-function dropDownData(){
+async function dropDownData(){
     let dropdown = document.getElementById('maltName');
     dropdown.length = 0;
 
@@ -39,32 +42,32 @@ function dropDownData(){
     // test url with grains
     //https://api.myjson.com/bins/x261w
     //const url = 'https://api.myjson.com/bins/wytok';
-    const url = 'https://davidalbady.github.io/zaab-calc.github.io/grains.json';
+    // const url = 'https://davidalbady.github.io/zaab-calc.github.io/grains.json';
 
-    fetch(url)  
-    .then(  
-        function(response) {  
-        if (response.status !== 200) {  
-            console.warn('Looks like there was a problem. Status Code: ' + response.status);  
-            return;
-        }
+    // await fetch(url) 
+    // .then(  
+    //     function(response) {  
+    //     if (response.status !== 200) {  
+    //         console.warn('Looks like there was a problem. Status Code: ' + response.status);  
+    //         return;
+    //     }
 
-        // Examine the text in the response  
-        response.json().then(function(data) {
-            let option;
+    //     // Examine the text in the response  
+    //     await response.json().then(function(data) {
+    //         let option;
         
-            for (let i = 0; i < data.length; i++) {
-                option = document.createElement('option');
-                option.text = data[i].Grain;
-                option.value = data[i];
-                dropdown.add(option);
-            }  
-        });  
-        }  
-    )  
-    .catch(function(err) {  
-        console.error('Fetch Error -', err);  
-    });
+    //         for (let i = 0; i < data.length; i++) {
+    //             option = document.createElement('option');
+    //             option.text = data[i].Grain;
+    //             option.value = data[i];
+    //             dropdown.add(option);
+    //         }  
+    //     });  
+    //     }  
+    // )  
+    // .catch(function(err) {  
+    //     console.error('Fetch Error -', err);  
+    // });
 
 }
 
@@ -176,6 +179,13 @@ function removeHops(){
     var hopsContainer = document.getElementById("hops-container");
     hopsContainer.parentNode.removeChild(hopsContainer);
 }
+
+
+function overlayOff(){
+    document.getElementById("overlay-malt").style.display = "none";
+}
+
+//Test data for overlay table test.
 grains_test = [
     {
       "grain": "Pilsner Malt",
@@ -269,18 +279,13 @@ grains_test = [
     }
 ]
 
-function overlayOff(){
-    document.getElementById("overlay-malt").style.display = "none";
-}
-
-
-function addMaltData() {
-    let grainsData = getGrainData();
+async function addMaltData() {
+    //const grains_test = await (getGrainData());
     document.getElementById("overlay-malt").style.display = "block";
     // Extract value from table header. 
     let col = [];
-    for (let i = 0; i < grainsData.length; i++) {
-        for (let key in grainsData[i]) {
+    for (let i = 0; i < grains_test.length; i++) {
+        for (let key in grains_test[i]) {
             if (col.indexOf(key) === -1) {
                 col.push(key);
             }
@@ -310,13 +315,13 @@ function addMaltData() {
     }
 
     // add json data to the table as rows.
-    for (let i = 0; i < grainsData.length; i++) {
+    for (let i = 0; i < grains_test.length; i++) {
 
         tr = table.insertRow(-1);
 
         for (let j = 0; j < col.length; j++) {
             let tabCell = tr.insertCell(-1);
-            tabCell.innerHTML = grainsData[i][col[j]];
+            tabCell.innerHTML = grains_test[i][col[j]];
         }
     }
 
