@@ -279,6 +279,14 @@ grains_test = [
     }
 ]
 
+
+async function fetchMalt () {
+    let grainsRespNode = await fetch("./getgrains");
+    console.log(grainsRespNode);
+}
+
+fetchMalt();
+
 async function addMaltData() {
     //const grains_test = await (getGrainData());
     document.getElementById("overlay-malt").style.display = "block";
